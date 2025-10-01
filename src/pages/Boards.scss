@@ -42,6 +42,7 @@
     background: #fff;
     border-radius: 10rem;
     font-size: 1.6rem;
+    white-space: pre-line; /* 줄바꿈(\n) 처리 */
 }
 .review-btn {
     display: flex;

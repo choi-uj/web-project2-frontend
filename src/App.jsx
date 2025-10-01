@@ -15,8 +15,8 @@ function App() {
     <>
         <BrowserRouter basename="/web-project2-frontend">
               <Routes>
-                <Route path="/" element={<WebHome />} />
-                <Route path="/review" element={<Review />}> 
+                <Route path="http://74.220.48.0/24/" element={<WebHome />} />
+                <Route path="http://74.220.48.0/24/review" element={<Review />}> 
                   <Route index element={<Boards />} />
                   <Route path="add" element={<Add />} />
                   <Route path="updates/:id" element={<Updates />} />

@@ -7,7 +7,8 @@ export default defineConfig({
   base: '/web-project2-frontend/',
   server: {
     proxy: {
-      '/api': 'http://localhost:8500',  // 백엔드 서버 API 경로 설정
+      // '/api': 'http://localhost:8500',  // 백엔드 서버 API 경로 설정
+      '/api' : 'https://web-project2-backend.onrender.com'
     },
   },
 })

@@ -30,7 +30,6 @@ function Project() {
         }
     ];
 
-    // test
     return(
         <section className="project scroll-section">
             <h2>Portfolio</h2>

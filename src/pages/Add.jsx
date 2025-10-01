@@ -1,14 +1,20 @@
 // Add.jsx
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "./Add.scss";
 
 const Add = () => {
+  const navigate = useNavigate();
+  const apiUrl = import.meta.env.VITE_API_URL;
+
   const [board, setBoard] = useState({
     username: "",
     password: "",
     title: "",
     content: ""
   });
+  console.log("board:", board);
 
   const handleChange = (e) => {
     setBoard(prev => ({
@@ -17,22 +23,39 @@ const Add = () => {
     }));
   };
 
+    const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post(`${apiUrl}/web2_full`, board);
+      alert("새 글이 등록되었습니다.");
+      navigate('/review'); 
+    } catch (err) {
+      console.error(err);
+      alert("등록에 실패했습니다.");
+    }
+    
+  };
+
+
   return (
     <div className="form">
-      <input
-        type="text"
-        placeholder="username"
-        name="username"
-        value={board.username}
-        onChange={handleChange}
-      />
-      <input
-        type="password"
-        placeholder="password"
-        name="password"
-        value={board.password}
-        onChange={handleChange}
-      />
+      <div className="form-name">
+        <input
+          type="text"
+          placeholder="username"
+          name="username"
+          value={board.username}
+          onChange={handleChange}
+        />
+        <input
+          type="password"
+          placeholder="password"
+          name="password"
+          value={board.password}
+          onChange={handleChange}
+        />
+      </div>
+      
       <input
         type="text"
         placeholder="제목"
@@ -40,7 +63,7 @@ const Add = () => {
         value={board.title}
         onChange={handleChange}
       />
-      <input
+      <textarea
         type="text"
         placeholder="내용"
         name="content"
@@ -48,8 +71,8 @@ const Add = () => {
         onChange={handleChange}
       />
       <div className="add-btn">
-        <button className="not-write" >삭제</button>
-        <button className="write">수정</button>
+        <button className="not-write" onClick={() => navigate(-1)} >취소</button>
+        <button className="write" onClick={handleSubmit}>작성</button>
       </div>
     </div>
   );

@@ -1,0 +1,32 @@
+// Review.scss
+.review {
+    width: 100vw;
+    display: flex;flex-direction: column;
+    background: var(--cream);
+    color: var(--deepgreen);
+}
+.review-name {
+    padding: 20rem 20rem 10rem 20rem;
+    display: flex; height: 30rem;
+    justify-content: space-between;
+    align-items: center;
+
+    .round-btn {
+        background: var(--green);
+        width: 11rem;height: 11rem;
+
+        .btn-label {
+            font-size: 2.4rem;
+            color: var(--cream);
+        }
+
+        .circular-text {
+            width: 19rem;height: 19rem;
+
+            text {
+                font-size: 1.3rem;
+                fill: var(--green);
+            }
+        }
+    }
+}

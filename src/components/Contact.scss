@@ -1,0 +1,111 @@
+// Contact.scss
+.contact {
+    display: flex;flex-direction: row;
+    justify-content: space-between;
+    background: var(--cream);
+    width: 100vw;
+}
+.cont-txt {
+    display: flex;flex-direction: column;
+    gap: 6rem;padding: 10rem 0 0 20rem;
+    width: 50vw;
+}
+.contact-main {
+    display: flex;flex-direction: column;
+    gap: 2rem;
+
+    .process-btn {
+        display: flex;flex-direction: row;
+        gap: 2rem;
+        width: 100%;
+
+        a {
+            width: 2rem;height: 2rem;
+            border: 1px solid var(--green);
+            border-radius: 50%;
+            cursor: pointer;
+
+            &.active {
+                background: var(--green);
+            }
+        }
+    }
+}
+.process {
+    display: flex;flex-direction: column;
+    gap: 6rem;padding: 0 3rem 10rem 3rem;
+
+    li {
+        list-style: disc;color: var(--green);
+        font-size: 2.4rem;line-height: 4rem;
+    }
+}
+
+.contact-btn {
+    .round-btn {
+        background: var(--lightgreen);
+        color: var(--deepgreen);
+
+        .btn-label{
+            line-height: 2rem;
+        }
+        .circular-text text {
+            fill: var(--lightgreen);
+        }
+        &:hover {
+            color: var(--cream);
+            background: var(--green);
+        }
+        &:hover .circular-text text{
+            fill: var(--green);
+        }
+    }
+}
+.cont-img {
+    display: flex;
+    width: 50%;
+    height: auto;
+
+    img {
+        width: 100%;height: 100%;
+        object-fit: cover;
+    }
+}
+@media screen and (max-width: 1280px) {
+    .cont-txt {
+        padding: 10rem 5rem 0 5rem;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .contact {
+        flex-direction: column;
+    }
+    .cont-txt {
+        gap: 7rem;width: 100vw;   
+    }
+    .contact-btn {
+        .round-btn {
+            width: 11rem;height: 11rem;
+            
+            .circular-text {
+                width: 20rem;
+            }
+        }
+    }
+    .process {
+        flex-direction: row;
+        justify-content: start;
+        gap: 8rem;
+
+        ul {
+            height: 10rem;
+        }
+        li {
+            font-size: 2rem;
+        }
+    }
+    .cont-img {
+        width: 100vw;height: 50vh;
+    }
+}

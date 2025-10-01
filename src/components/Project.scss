@@ -1,0 +1,125 @@
+// Project.scss
+.project {
+    display: flex;flex-direction: column;
+    justify-content: center;align-items: center;
+    padding: 10rem 0 0 0;gap: 10rem;
+    background: var(--deepgreen);
+    color: var(--cream);
+}
+
+.pf-list {
+    display: flex;flex-direction: row;
+    width: 100%;height: 65vh;gap: 0;
+    justify-content: space-between; /* 각 항목 사이에 공간을 추가 */
+    // background: #222;
+}
+.pf-list>li {
+    display: flex;width: 100%;position: relative;z-index: 1;
+    justify-content: center;align-items: center;
+    font-size: 2rem;overflow: hidden;
+    width: 16.6%; /* 초기 너비는 전체 6개 항목 기준으로 100%를 6으로 나눈 값 */
+    transition: width 0.3s ease, transform 0.3s ease; /* 너비와 변형에 애니메이션 추가 */
+
+    > a {
+        display: flex;
+        justify-content: center;align-items: center;
+        width: 100%;height: 100%;
+    }
+    .desc {
+            position: absolute;opacity: 0;
+            top: 60%;left: 50%;
+            transform: translateX(-50%);
+            width: 80%;text-align: center;
+            font-size: 1.6rem;line-height: 2rem;
+            color: var(--cream);
+            // opacity: 0;
+            transition: opacity 1s ease;
+            pointer-events: none;
+        }
+
+    
+    &:hover {
+        width: 30%; /* hover 시 해당 항목 너비를 늘림 */
+        transform: scaleX(1.05); /* hover 시 살짝 확대 효과 */
+        transition: all 0.4s ease;
+        
+        
+        > a {
+            font-size: 3rem;
+            padding-bottom: 5rem;
+        }
+        &::after {
+            background: rgba($color: #000000, $alpha: 0.8);
+        }
+        .desc {
+        opacity: 1;
+    }
+
+    }
+
+    &::before {
+        content: "";
+        display: flex;
+        height: 100%;
+        width: 100%;
+        aspect-ratio: 1/2;
+        position: absolute;
+        z-index: -1;
+        background-size: cover;
+        background-position: center;
+    }
+
+    &:nth-child(1)::before {
+        background-image: url('/img/pf01.jpg');
+    }
+    &:nth-child(2)::before {
+        background-image: url('/img/pf02.png');
+    }
+    &:nth-child(3)::before {
+        background-image: url('/img/pf03.jpg');
+    }
+    &:nth-child(4)::before {
+        background-image: url('/img/pf04.png');
+    }
+    &:nth-child(5)::before {
+        background-image: url('/img/pf05.jpg');
+    }
+    &:nth-child(6)::before {
+        background-image: url('/img/pf06.jpg');
+    }
+    &::after {
+        content: "";position: absolute;
+        display: flex;width: 100%;height: 100%;z-index: -1;
+        background: rgba($color: #000000, $alpha: 0.4);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .pf-list {
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .pf-list > li {
+        width: 100%;
+        height: 16.6%;
+        transition: height 0.4s ease;
+        // ✅ 데스크탑 효과 초기화
+        transform: none;           // scaleX 제거
+        transition: height 0.4s ease !important; // transition 재정의
+        font-size: 2rem;
+
+        &:hover {
+            height: 35%;
+            // ✅ 데스크탑 hover 효과 제거
+            width: 100% !important;         // 가로 확장 막기
+            transform: none !important;     // scaleX 제거
+        }
+
+        > a {
+            font-size: 2.5rem;
+            padding-bottom: 2rem;
+        }
+    }
+}

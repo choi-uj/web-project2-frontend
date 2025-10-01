@@ -1,0 +1,298 @@
+.about {
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+    overflow: hidden; // 필요하다면 auto
+}
+
+.about-inner {
+    // display: flex;
+    width: 100vw;height: 100%;
+    border-radius: 50%;
+    color: var(--cream);
+}
+
+.about-toggle-btn {
+    position: absolute;z-index: 20;
+    display: flex;
+    justify-content: center;align-items: center;
+    bottom: 15rem;left: 8rem;
+    width: 8rem;height: 8rem;
+    border-radius: 50%;
+    background: var(--deepgreen);
+
+    /* 포커스 시 스타일 제거 */
+    &:focus {
+        outline: none;
+        border: none;
+    }
+    &:hover {
+        background: var(--lightgreen);
+        color: var(--deepgreen);
+    }
+    
+    i {
+        font-size: 4rem;
+    }
+}
+
+.about-pages {
+  display: flex;
+  width: 200%; // 두 페이지가 좌우로 나란히 있다고 가정
+  transition: transform 0.5s ease;
+  transform: translateX(0%);
+
+  &::-webkit-scrollbar {
+    display: none; // 스크롤바 숨김
+  }
+
+  &.show-second {
+    transform: translateX(-50vw); // 두 번째 페이지로 이동
+  }
+}
+.about-page {
+// flex-shrink: 0;
+  flex: 0 0 100vw;
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: space-between;
+}
+.about-page {
+    display: flex;
+}
+
+.about-menu {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;justify-content: start;
+    padding: 10rem 0 10rem 20rem;
+    gap: 10rem;
+
+    .about-h {
+        display: flex;flex-direction: column;
+        gap: 3rem;color: var(--deepgreen);
+
+        p {
+            color: var(--green);
+        }
+    }
+}
+// .about-link {
+//     display: flex;width: 50rem;
+//     gap: 10rem;padding-left: 5rem;
+    
+//     .round-btn {
+//         color: var(--cream);
+//         background: var(--deepgreen);
+
+//         .btn-label{
+//             line-height: 2rem;
+//         }
+//         .circular-text text {
+//             fill: var(--deepgreen);
+//         }
+//         &:hover {
+//             color: var(--deepgreen);
+//             background: var(--lightgreen);
+//         }
+//         &:hover .circular-text text{
+//             fill: var(--lightgreen);
+//         }
+//     }
+// }
+
+.about-a {
+    width: 50vw;height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10rem 20rem 10rem 0;
+    transition: all 0.3s ease;
+    
+
+    .about-round span {
+        display: none;
+    }
+}
+.about-a.active {
+    padding: 10rem 0rem 10rem 20rem;
+
+    .about-round {
+        width: 25rem;
+        border-radius: 10rem;
+        font-size: 2.4rem;line-height: 2.4rem;
+        gap: 1.6rem;
+        transition: width 0.5s ease;
+
+        span {
+        display: block;
+        font-size: 1.6rem;
+        transition: all 0.5s ease;
+        }
+    }
+
+    h3 {
+        color: var(--lightgreen);
+        transition: all 0.5s ease;
+    }
+}
+
+
+.about-b {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10rem 20rem 10rem 4rem;
+
+    .about-round {
+        width: 25rem;
+        border-radius: 10rem;
+        background: var(--lightgreen);
+        color: var(--deepgreen);
+        line-height: 5rem;
+        font-size: 2.4rem;
+        font-weight: 600;
+
+        span {
+            display: block;
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+    }
+}
+
+.a-center, .b-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    h3 {
+        font-size: 4.8rem;
+        font-weight: 700;
+        color: var(--deepgreen);
+    }
+}
+
+.about-round {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 18rem;
+    height: 18rem;
+    border-radius: 50%;
+    background: var(--deepgreen);
+    color: var(--cream);
+    font-size: 3rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 1280px) {
+      // ✅ 1. 토글 버튼 숨기기
+    .about-toggle-btn {
+        display: none !important;
+    }
+
+    // ✅ 2. 페이지 세로 배치
+    .about-pages {
+        flex-direction: column;
+        width: 100%; // 200% → 100%로
+        transform: none !important; // translateX 제거
+        transition: none; // 슬라이드 전환 제거
+    }
+
+    // ✅ 3. 개별 페이지도 full width
+    .about-page {
+        flex: none;
+        width: 100%;
+        height: auto; // 각 페이지 높이를 콘텐츠에 맞게
+        flex-direction: column;
+    }
+
+    // ✅ 4. 내부 레이아웃들 조정 (좌우 → 상하로)
+    .about-menu {
+        width: 100%;
+        padding: 5rem 3rem;
+        flex-direction: row;
+        align-items: center;
+        gap: 5rem;
+    }
+    .about-a, .about-b {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0rem 20rem;
+    }
+    .about-a {
+        // align-items: end;
+        padding-bottom: 2rem;
+
+        .about-round {
+            width: 18rem;height: 18rem;
+            border-radius: 10rem;
+            font-size: 2.4rem;
+            line-height: 2.4rem;
+            gap: 1.6rem;
+
+            span {
+            display: block;
+            font-size: 1.6rem;
+            }
+        }
+    }
+    .about-b {
+        // align-items: start;
+       
+        .about-round {
+            width: 18rem;
+            height: 18rem;
+            font-size: 2.4rem;
+            gap: 1.6rem;
+            margin-bottom: 10rem;
+        }
+    }
+
+    .a-center, .b-center {
+        flex-direction: column;
+        gap: 6rem;width: 20%;
+        height: 100%;
+
+        h3 {
+        font-size: 3.6rem;
+        text-align: center;
+        }
+    }
+    .a-center > h3 {
+        color: var(--lightgreen) !important;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .about-a, .about-b {
+        padding: 1rem 5rem;
+        
+        
+        .about-round {
+            width: 14rem;height: 14rem;
+            font-size: 2rem;line-height: 2rem;
+
+            span {
+                font-size: 1.4rem;
+            }
+        }
+    }
+    .about-b {margin-bottom: 10rem;}
+    .a-center, .b-center {
+        gap: 3rem;
+
+        h3 {font-size: 3rem;}
+    }
+}

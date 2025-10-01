@@ -1,0 +1,103 @@
+// MainVisual.scss
+
+.main-visual {
+    position: relative;
+    width: 100vw;height: 100vh;
+    overflow: hidden;
+
+    .mySwiper {width: 100%;height: 100%;
+
+        .swiper-slide {
+            position: relative;
+            display: flex;align-items: center;
+            justify-content: center;
+
+            img {
+            width: 100%;height: 100%;
+            object-fit: cover;
+            }
+
+            &::before {
+                position: absolute;
+                content: '';z-index: 10;
+                width: 100vw;height: 100vh;
+                background: rgba($color: #000000, $alpha: 0.2);
+            }
+        }
+    }
+}
+
+.controls {
+    position: absolute;
+    top: 15rem;right: 20rem;
+    z-index: 10;
+    display: flex;flex-direction: column;
+    align-items: center;justify-content: space-between;
+    gap: 10rem;
+
+    .pagination {
+        .swiper-pagination-bullet {
+            margin: 1rem;
+            width: 2rem;height: 2rem;
+            background: none;
+            opacity: 1;
+            border: 1px solid var(--cream);
+
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--lightgreen);
+            border: 1px solid var(--lightgreen);
+        }
+    }
+}
+
+.toggle-btn {
+    position: relative; 
+    display: flex;
+    justify-content: center;align-items: center;
+    background: #FFF1DB;
+    color: var(--deepgreen);
+    border: none;
+    width: 5rem;height: 5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.8rem;
+    outline: none;  // ← 포커스 아웃라인 제거
+
+    &:hover {
+        background: var(--green);
+        color: var(--cream);
+    }
+
+    &:focus {
+        outline: none; // ← 키보드 포커스 시에도 제거
+    }
+
+    &::after {
+        position: absolute;
+        content: ''; // 이게 없으면 ::after는 나타나지 않음
+        width: 7rem;height: 7rem;
+        border: 1px solid var(--cream);
+        border-radius: 50px;
+        z-index: -1;
+    }
+
+    &:hover::after {
+        border: 1px solid var(--green);
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .controls {
+        top: 80%;;right: 40%;
+        display: flex;flex-direction: row;
+        gap: 3rem;
+        height: 20rem;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .controls {right: 30%;}
+}

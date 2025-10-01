@@ -1,0 +1,48 @@
+// CircularBtn.scss
+.round-btn {
+    position: relative;display: flex;
+    justify-content: center;align-items: center;
+    width: 13rem;height: 13rem;
+    border-radius: 50%;
+    background-color: inherit;
+    overflow: visible;
+    font-size: 1.8rem;line-height: 2.2rem;
+    font-weight: 400;text-align: center;
+
+    .btn-label {
+        position: relative;
+        font-size: 1.8rem;
+        font-weight: 500;
+        text-align: center;
+        z-index: 1;
+    }
+
+    .circular-text {
+        position: absolute;
+        width: 21rem;
+        height: 21rem;
+        transform-origin: center;
+        animation: rotateText 20s linear infinite;
+        animation-play-state: paused; // ⬅️ 기본은 정지
+        pointer-events: none;
+
+        text {
+            font-size: 1.3rem;
+            fill: #333;font-weight: 500;
+            letter-spacing: 3px;
+        }
+    }
+
+    &:hover .circular-text {
+        animation-play-state: running; // ⬅️ hover시에만 실행
+    }
+}
+
+@keyframes rotateText {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

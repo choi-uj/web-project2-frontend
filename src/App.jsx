@@ -13,7 +13,7 @@ function App() {
   }
   return (
     <>
-        <BrowserRouter basename="/web-project2-frontend">
+        <BrowserRouter >
               <Routes>
                 <Route path="/" element={<WebHome />} />
                 <Route path="/review" element={<Review />}> 

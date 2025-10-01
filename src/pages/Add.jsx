@@ -14,7 +14,7 @@ const Add = () => {
     title: "",
     content: ""
   });
-  console.log("board:", board);
+  // console.log("board:", board);
 
   const handleChange = (e) => {
     setBoard(prev => ({
@@ -46,6 +46,7 @@ const Add = () => {
           name="username"
           value={board.username}
           onChange={handleChange}
+          required
         />
         <input
           type="password"
@@ -53,6 +54,7 @@ const Add = () => {
           name="password"
           value={board.password}
           onChange={handleChange}
+          required
         />
       </div>
       
@@ -62,6 +64,7 @@ const Add = () => {
         name="title"
         value={board.title}
         onChange={handleChange}
+        required
       />
       <textarea
         type="text"
@@ -69,6 +72,7 @@ const Add = () => {
         name="content"
         value={board.content}
         onChange={handleChange}
+        required
       />
       <div className="add-btn">
         <button className="not-write" onClick={() => navigate(-1)} >취소</button>

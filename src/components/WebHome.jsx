@@ -40,8 +40,8 @@ function WebHome() {
 
     return(
         <>
-            <Side />
             <Header />
+            <Side />
             <MainVisual />
             <About />
             <Project />

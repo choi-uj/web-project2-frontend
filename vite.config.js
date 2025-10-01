@@ -7,8 +7,11 @@ export default defineConfig({
   base: './',
   server: {
     proxy: {
-      // '/api': 'http://localhost:8500',  // 백엔드 서버 API 경로 설정
-      '/api' : 'https://web-project2-backend.onrender.com'
-    },
+      '/api': {
+        target: 'https://web-project2-backend.onrender.com',
+        rewrite: (path) => path.replace(/^\/api/, '')  // '/api' 접두사 제거
+      }
+    }
   },
 })
+

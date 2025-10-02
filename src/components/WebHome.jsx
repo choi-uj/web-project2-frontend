@@ -20,13 +20,14 @@ function WebHome() {
         const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {
+                console.log("감지됨:", entry.target, entry.isIntersecting);
             if (entry.isIntersecting) {
                 entry.target.classList.add("in-view");
             }
             });
         },
         {
-            threshold: 0.3,
+            threshold: 0.1,
         }
         );
 

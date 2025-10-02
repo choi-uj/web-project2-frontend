@@ -23,17 +23,32 @@ const Add = () => {
     }));
   };
 
-    const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // 1. 입력값 유효성 검사
+    const { username, password, title, content } = board;
+    if (!username || !password || !title || !content) {
+      alert("모든 항목을 입력해주세요.");
+      return;
+    }
+
+    // 2. 서버 요청 처리
     try {
       await axios.post(`${apiUrl}/web2_full`, board);
       alert("새 글이 등록되었습니다.");
-      navigate('/review'); 
+      navigate('/review');
     } catch (err) {
       console.error(err);
-      alert("등록에 실패했습니다.");
+
+      // 서버 연결 불가 (네트워크 오류 등)
+      if (!err.response) {
+        alert("서버에 연결할 수 없습니다. 인터넷 연결 또는 서버 상태를 확인해주세요.");
+      } else {
+        // 서버는 응답했지만 다른 이유로 실패
+        alert("등록에 실패했습니다. 다시 시도해주세요.");
+      }
     }
-    
   };
 
 

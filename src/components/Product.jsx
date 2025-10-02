@@ -21,7 +21,7 @@ function Product() {
     ];
 
     return(
-        <section className="product scroll-section">
+        <section id="product" className=" scroll-section">
             <div className="container">
                 <div className="omg-int">
                     <div className="omg-txt">

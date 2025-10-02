@@ -1,5 +1,5 @@
 // Product.scss
-.product {
+#product {
     background: var(--cream);
 
     .container {
@@ -71,7 +71,7 @@
 }
 
 @media screen and (max-width: 1280px){
-    .product {
+    #product {
         .container {
             padding: 10rem 5rem;
         }

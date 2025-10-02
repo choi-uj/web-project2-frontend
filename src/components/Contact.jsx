@@ -11,7 +11,7 @@ function Contact() {
     };
 
     return(
-        <section className="contact scroll-section">
+        <section id="contact" className=" scroll-section">
             <div className="cont-txt">
                 <div className="contact-main">
                     <h2>Design-Build<br />Process</h2>

@@ -1,6 +1,6 @@
 // News.scss
-.news {background: var(--deepgreen);}
-.news .container {
+#news {background: var(--deepgreen);}
+#news .container {
     display: flex;flex-direction: column;
     justify-content: center;align-items: center;
     position: relative;gap: 10rem;padding-bottom: 10rem;
@@ -110,7 +110,7 @@
 }
 
 @media screen and (max-width: 1280px) {
-    .news .container {
+    #news .container {
         .round-btn {
             right: 10rem;
         }
@@ -118,7 +118,7 @@
 }
 
 @media screen and (max-width: 900px) {
-    .news .container {
+    #news .container {
         justify-content: center;align-items: start;
     }
     .news-li {

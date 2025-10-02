@@ -31,6 +31,9 @@ p {
 .scroll-section {
   min-height: 100vh;
 }
+button:focus {
+    outline-style: none;
+}
 
 
 @media screen and (max-width: 1280px) {

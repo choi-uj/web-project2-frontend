@@ -17,6 +17,14 @@ function Header() {
     const toggleMenu = () => {
         setIsMenuOpen(prev => !prev);
     };
+    const scrollToSection = (id) => {
+    const target = document.getElementById(id);
+        if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+            setIsMenuOpen(false); // 모바일 메뉴 닫기
+        }
+    };
+    
 
     return(
         <header id="header" className={isScrolled ? "scrolled" : ""}>
@@ -29,27 +37,32 @@ function Header() {
             {/* ✅ 메뉴 열림 여부에 따라 클래스 추가 */}
              <nav id="gnb" className={isMenuOpen ? "open" : ""} >
                  <ul className="dep1">
-                     <li><a href="/">About</a>
+                     <li>
+                        <button onClick={() => scrollToSection("about")}>About</button>
                      </li>
-                     <li><a href="/">Contact</a>
+                     <li>
+                        <button onClick={() => scrollToSection("contact")}>Contact</button>
                          <ul className="dep2">
-                             <li><a href="/">맞춤형 디자이너 설계</a></li>
-                             <li><a href="/">그린 스페이스 &<br /> 콘텐츠 통합 솔루션</a></li>
+                            <li><button onClick={() => scrollToSection("contact")}>맞춤형 디자이너 설계</button></li>
+                            <li><button onClick={() => scrollToSection("contact")}>그린 스페이스 & 콘텐츠 통합 솔루션</button></li>
                          </ul>
                      </li>
-                     <li><a href="/">Project</a>
-                         <ul className="dep2">
-                             <li><a href="/">통합공간기획</a></li>
-                             <li><a href="/">주택조경</a></li>
-                             <li><a href="/">상업조경</a></li>
-                             <li><a href="/">공공프로젝트</a></li>
-                             <li><a href="/">전시 / 팝업 / 컨텐츠</a></li>
-                             <li><a href="/">공유정원</a></li>
-                         </ul>
+                     <li>
+                        <button onClick={() => scrollToSection("project")}>Project</button>
+                        <ul className="dep2">
+                            <li><button onClick={() => scrollToSection("project")}>통합공간기획</button></li>
+                            <li><button onClick={() => scrollToSection("project")}>주택조경</button></li>
+                            <li><button onClick={() => scrollToSection("project")}>상업조경</button></li>
+                            <li><button onClick={() => scrollToSection("project")}>공공프로젝트</button></li>
+                            <li><button onClick={() => scrollToSection("project")}>전시 / 팝업 / 컨텐츠</button></li>
+                            <li><button onClick={() => scrollToSection("project")}>공유정원</button></li>
+                        </ul>
                      </li>
-                     <li><a href="/">News</a>
+                     <li>
+                        <button onClick={() => scrollToSection("news")}>News</button>
                      </li>
-                     <li><a href="/">Product</a>
+                     <li>
+                        <button onClick={() => scrollToSection("product")}>Product</button>
                      </li>
                  </ul>
              </nav>

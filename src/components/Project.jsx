@@ -31,7 +31,7 @@ function Project() {
     ];
 
     return(
-        <section className="project scroll-section">
+        <section id="project" className=" scroll-section">
             <h2>Portfolio</h2>
             <ul className="pf-list">
                 {projectItems.map((item, index) => (

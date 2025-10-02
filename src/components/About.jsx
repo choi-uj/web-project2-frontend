@@ -11,7 +11,7 @@ function About() {
     };
 
     return (
-        <section className="about scroll-section">
+        <section id="about" className=" scroll-section">
           <div className="about-inner">
                 {/* Toggle Button */}
                 <button className="about-toggle-btn" onClick={handleToggle}>

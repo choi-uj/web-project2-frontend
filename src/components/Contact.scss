@@ -1,5 +1,5 @@
 // Contact.scss
-.contact {
+#contact {
     display: flex;flex-direction: row;
     justify-content: space-between;
     background: var(--cream);
@@ -78,7 +78,7 @@
 }
 
 @media screen and (max-width: 960px) {
-    .contact {
+    #contact {
         flex-direction: column;
     }
     .cont-txt {

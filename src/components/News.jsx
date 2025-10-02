@@ -5,7 +5,7 @@ import CircularBtn from './CircularBtn';
 
 function News() {
     return(
-        <section className="news scroll-section">
+        <section id="news" className=" scroll-section">
             <div className="container">
                 <h2>News</h2>
                 <CircularBtn as="a" href="#news" text={<>전체보기</>}/>

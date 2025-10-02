@@ -3,11 +3,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, Outlet } from "react-router-dom";
 import CircularBtn from "../components/CircularBtn";
-// import Boards from "./Boards";
-// import Add from "./Add";
-// import Updates from "./Updates";
 import './Review.scss';
 import Header from "../components/Header";
+import Side from "../components/Side";
 import "../components/css/reset.css";
 import "../components/css/main.css";
 import "../components/css/font.css";
@@ -42,6 +40,7 @@ const Review = ()=>{
     return(
         <>
           <Header />
+          <Side/>
           <section className='review'>
             <div className='review-name'>
               <h2> Review </h2>

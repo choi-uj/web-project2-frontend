@@ -10,15 +10,17 @@ const Boards = ()=>{
   const [ boards, setBoards ] = useState([]);
   const apiUrl = import.meta.env.VITE_API_URL;
   const navigate = useNavigate();
+  const [error, setError] = useState(false);  // 에러 상태 추가
 
     useEffect(() => {
       const fetchAllBoards = async () => {
         try {
           const res = await axios.get(`${apiUrl}/web2_full`);
-          // console.log("fetched boards:", res.data); // 응답 확인
           setBoards(res.data);
+          setError(false);  // 성공 시 에러 상태 초기화
         } catch (err) {
           console.log(err);
+          setError(true);   // 에러 발생 시 true로 변경
         }
       };
       fetchAllBoards();
@@ -36,6 +38,11 @@ const Boards = ()=>{
 
     return(
         <>
+        {error ? (
+          <div className="error-message">
+            웹 서버 문제로 서버 연결에 실패했습니다.
+          </div>
+        ) : (
           <div className="boards">
               {boards.map(board=>(
                 <div className="new-board" key={board.id}>
@@ -50,6 +57,7 @@ const Boards = ()=>{
                  </div>
               ))}
             </div> 
+          )}
         </>
     )
 }

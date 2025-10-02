@@ -8,7 +8,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://web-project2-backend.onrender.com',
+        target: 'http://localhost:8500',
         rewrite: (path) => path.replace(/^\/api/, '')  // '/api' 접두사 제거
       }
     }

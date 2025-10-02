@@ -1,5 +1,7 @@
 // Review.scss
 .review {
+    position: absolute;
+    top: 0;left: 0;right: 0;
     width: 100vw;
     display: flex;flex-direction: column;
     background: var(--cream);
@@ -26,6 +28,30 @@
             text {
                 font-size: 1.3rem;
                 fill: var(--green);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .review-name {
+        padding: 20rem 5rem;
+        justify-content: start;
+        gap: 10rem;
+
+        .round-btn {
+            width: 9rem;height: 9rem;
+
+            .btn-label {
+                font-size: 2rem;
+            }
+            .circular-text {
+                width: 15rem;height: 15rem;
+
+                text {
+                    font-size: 1.4rem;
+                    fill: var(--green);
+                }
             }
         }
     }

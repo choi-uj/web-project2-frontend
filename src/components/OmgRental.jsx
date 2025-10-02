@@ -3,7 +3,7 @@ import React from "react";
 
 function OmgRental() {
     return(
-        <section className="omg-rental">
+        <section className="omg-rental ">
             <h2>OMG 렌탈 서비스</h2>
             <p>폼을 작성해 주시면 메일로 견적서를 보내드립니다.</p>
             <p>< i className="ri-bard-fill"></i> : 작성필수</p>

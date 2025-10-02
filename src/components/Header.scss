@@ -7,6 +7,7 @@
     z-index: 1000;
     // ✅ 추가: 배경과 텍스트 색상 전환 부드럽게
     transition: background 0.3s ease, color 0.3s ease;
+    box-sizing: border-box;
 }
 #header:hover {
     background: #fff;

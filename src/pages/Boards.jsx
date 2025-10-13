@@ -40,7 +40,7 @@ const Boards = ()=>{
         <>
         {error ? (
           <div className="error-message">
-            웹 서버 문제로 서버 연결에 실패했습니다.
+            본 프로젝트의 백엔드 부분은 웹 서버를 따로 사용하지 않아 <br/> localhost에서만 작동합니다.
           </div>
         ) : (
           <div className="boards">

@@ -32,10 +32,6 @@ function Product() {
                             [OMG 렌탈 서비스]를 이용해 보세요.
                         </p>
                     </div>
-                    {/* <div className="omg-btn">
-                        <CircularBtn as="a" href="#product" text="렌탈 상담"/>
-                        <CircularBtn as="a" href="#product" text="사이즈별 금액"/>
-                    </div> */}
                 </div>
                 <div className="omg-img">
                     {images.map((img, index) => (

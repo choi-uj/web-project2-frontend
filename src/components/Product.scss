@@ -25,27 +25,6 @@
         color: var(--green);
     }
 }
-// .omg-btn {
-//     display: flex;
-//     gap: 10rem;padding-left: 2rem;
-
-//     .round-btn {
-//         background: var(--deepgreen);
-//         color: var(--cream);
-
-//         .circular-text text {
-//             fill: var(--deepgreen); // 원하는 색상으로 변경
-//         }
-//         &:hover {
-//             background: var(--lightgreen);
-//             color: var(--deepgreen);
-
-//             .circular-text text {
-//                 fill: var(--lightgreen);
-//             }
-//         }
-//     }
-// }
 .omg-img {
   display: grid;flex: 1;width: 100%;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));

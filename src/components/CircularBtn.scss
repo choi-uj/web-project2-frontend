@@ -23,7 +23,7 @@
         height: 21rem;
         transform-origin: center;
         animation: rotateText 20s linear infinite;
-        animation-play-state: paused; // ⬅️ 기본은 정지
+        animation-play-state: paused; 
         pointer-events: none;
 
         text {
@@ -34,7 +34,7 @@
     }
 
     &:hover .circular-text {
-        animation-play-state: running; // ⬅️ hover시에만 실행
+        animation-play-state: running; 
     }
 }
 

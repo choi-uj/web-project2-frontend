@@ -89,7 +89,7 @@
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
-        overflow: hidden; /* 영역 밖 콘텐츠 숨김 */
+        overflow: hidden; 
         text-overflow: ellipsis; /* 숨겨진 콘텐츠 생략(...) 표기 */
         font-size: 2rem;color: var(--deepgreen);
     }

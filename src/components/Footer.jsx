@@ -6,7 +6,7 @@ function Footer() {
     return(
         <footer id="footer">
             <div className="container">
-                <div className="footer-logo"><img src="./img/footer-logo2.png" alt="#" /></div>
+                <div className="footer-logo"><img src="/img/footer-logo2.png" alt="로고" /></div>
                 <div className="footer-txt">
                     <address>
                         (주)그린디벨롭먼트<br />

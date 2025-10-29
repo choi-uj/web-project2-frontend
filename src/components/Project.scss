@@ -18,7 +18,7 @@
     justify-content: center;align-items: center;
     font-size: 2rem;overflow: hidden;
     width: 16.6%; /* 초기 너비는 전체 6개 항목 기준으로 100%를 6으로 나눈 값 */
-    transition: width 0.3s ease, transform 0.3s ease; /* 너비와 변형에 애니메이션 추가 */
+    transition: width 0.3s ease, transform 0.3s ease; 
 
     > a {
         display: flex;
@@ -39,8 +39,8 @@
 
     
     &:hover {
-        width: 30%; /* hover 시 해당 항목 너비를 늘림 */
-        transform: scaleX(1.05); /* hover 시 살짝 확대 효과 */
+        width: 30%; 
+        transform: scaleX(1.05); 
         transition: all 0.4s ease;
         
         

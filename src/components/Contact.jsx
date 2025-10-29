@@ -33,7 +33,7 @@ function Contact() {
                                 <CircularBtn
                                     as="a" href="#!"
                                     text={<>Step1.<br /> 사전안내</>}
-                                    onClick={() => setStep(2)} // ✅ 이 줄 추가
+                                    onClick={() => setStep(2)} 
                                 />
                             </div>
                             <ul>

@@ -136,7 +136,7 @@
         i {
             font-size: 3rem;
             color: var(--cream);
-            transition: transform 0.3s ease; // 부드럽게 회전
+            transition: transform 0.3s ease; 
         }
         
         &:focus {
@@ -145,7 +145,7 @@
             border: none;
         }
         &.open i {
-            transform: rotate(180deg); // 메뉴가 열릴 때 아이콘 회전
+            transform: rotate(180deg); 
         }
 
     }
@@ -167,7 +167,7 @@
 
 
         &.open {
-            display: flex; // 메뉴 열기
+            display: flex; 
             opacity: 1;height: 10rem;
             pointer-events: auto;
         }
@@ -176,7 +176,6 @@
             flex-direction: row;
             align-items: center;justify-content: center;
             width: 100%;padding: 1rem 3rem;
-            // gap: 2rem;
 
             > li {
                 text-align: center;
@@ -198,7 +197,6 @@
                     display: flex;
 
                     > li {
-                        // padding: 1rem 0;
                         
                         button {
                         font-size: 1.8rem;
@@ -223,7 +221,6 @@
             flex-direction: column;
             align-items: start;justify-content: start;
             width: 100%;padding: 1rem 3rem;
-            // gap: 2rem;
 
             > li {
                 width: 30%;
@@ -236,14 +233,12 @@
                 }
 
                 .dep2 {
-                    // position: relative;
                     top: -0.7rem; left: 12rem;
                     background: none;
                     padding: 0rem 1.5rem;
                     max-height: none;
                     opacity: 1;
                     transition: all 0.3s;
-                    // transform: none;
                     display: none;
                     align-items: start;
                     text-align: left;

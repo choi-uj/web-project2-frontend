@@ -1,8 +1,8 @@
 import React from "react";
 import './Side.scss'
 import Review from '../pages/Review';
-import { Routes, Route, Link } from "react-router-dom"; // Link 임포트
-import { useNavigate } from "react-router-dom"; // useNavigate 임포트
+import { Routes, Route, Link } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom"; 
 
 function Side() {
     const navigate = useNavigate(); // 새로운 페이지로 이동하기 위해 navigate 사용
